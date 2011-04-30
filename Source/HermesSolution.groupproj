@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{23818001-52B0-411C-8E70-07464FA8C7FD}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="..\External\dxBooster\Packages\dxbUITemplates.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Hermes.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="dxbUITemplates">
+			<MSBuild Projects="..\External\dxBooster\Packages\dxbUITemplates.dproj"/>
+		</Target>
+		<Target Name="dxbUITemplates:Clean">
+			<MSBuild Projects="..\External\dxBooster\Packages\dxbUITemplates.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="dxbUITemplates:Make">
+			<MSBuild Projects="..\External\dxBooster\Packages\dxbUITemplates.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Hermes">
+			<MSBuild Projects="Hermes.dproj"/>
+		</Target>
+		<Target Name="Hermes:Clean">
+			<MSBuild Projects="Hermes.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="Hermes:Make">
+			<MSBuild Projects="Hermes.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="dxbUITemplates;Hermes"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="dxbUITemplates:Clean;Hermes:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="dxbUITemplates:Make;Hermes:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>
