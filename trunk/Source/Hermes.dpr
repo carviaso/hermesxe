@@ -2,6 +2,7 @@ program Hermes;
 
 uses
   Forms,
+  midaslib, //!!! не надо midas.dll
   ExtensionEnumerator in 'Shell\ExtensionEnumerator.pas',
   ShellApp in 'Shell\ShellApp.pas';
 
