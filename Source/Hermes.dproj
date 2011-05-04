@@ -36,6 +36,8 @@
 			<DCC_K>false</DCC_K>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_SYMBOL_PLATFORM>false</DCC_SYMBOL_PLATFORM>
+			<DCC_SYMBOL_DEPRECATED>false</DCC_SYMBOL_DEPRECATED>
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
 			<DCC_Optimize>false</DCC_Optimize>
 			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
@@ -50,8 +52,12 @@
 			<DelphiCompile Include="Hermes.dpr">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
-			<DCCReference Include="Shell\ExtensionEnumerator.pas"/>
+			<DCCReference Include="Shell\Addons.pas"/>
 			<DCCReference Include="Shell\ShellApp.pas"/>
+			<RcItem Include="HermesAppLogo.bmp">
+				<ResourceType>BITMAP</ResourceType>
+				<ResourceId>APP_LOGO</ResourceId>
+			</RcItem>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
