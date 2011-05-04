@@ -1,7 +1,7 @@
 unit ShellApp;
 
 interface
-uses bfwShellApp;
+uses bfwShellApp, classes;
 
 type
   TShellApp = class(TApp)

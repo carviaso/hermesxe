@@ -1,9 +1,15 @@
 program Hermes;
 
+
+
+
+
+{$R *.dres}
+
 uses
   Forms,
-  midaslib, //!!! не надо midas.dll
-  ExtensionEnumerator in 'Shell\ExtensionEnumerator.pas',
+  midaslib,
+  Addons in 'Shell\Addons.pas',
   ShellApp in 'Shell\ShellApp.pas';
 
 {$R *.res}
