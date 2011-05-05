@@ -1,9 +1,5 @@
 program Hermes;
 
-
-
-
-
 {$R *.dres}
 
 uses
@@ -15,7 +11,7 @@ uses
 {$R *.res}
 
 begin
- // Application.Initialize;   for enabled applicaion options
+  //Application.Initialize;   for enabled applicaion options
 
 //  Application.MainFormOnTaskbar := True;
   ShellApp.TShellApp.ShellInstantiate;
