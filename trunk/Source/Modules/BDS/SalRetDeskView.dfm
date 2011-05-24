@@ -3,12 +3,16 @@ inherited frSalRetDeskView: TfrSalRetDeskView
   Top = 221
   Caption = 'frSalRetDeskView'
   ClientWidth = 1049
+  ExplicitWidth = 1055
+  ExplicitHeight = 551
   PixelsPerInch = 96
   TextHeight = 13
   inherited ViewControl: TcxGroupBox
+    ExplicitWidth = 1049
     Width = 1049
     inherited pnButtons: TcxGroupBox
       TabOrder = 2
+      ExplicitWidth = 1045
       Width = 1045
     end
     object cxGroupBox1: TcxGroupBox
@@ -136,7 +140,7 @@ inherited frSalRetDeskView: TfrSalRetDeskView
       Left = 2
       Top = 351
       Width = 1045
-      Height = 170
+      Height = 162
       Align = alClient
       TabOrder = 3
       LevelTabs.Style = 8
@@ -238,7 +242,7 @@ inherited frSalRetDeskView: TfrSalRetDeskView
           Position.RowIndex = 0
         end
         object grDataRecViewQTY4: TcxGridDBBandedColumn
-          Caption = #1091#1095#1077#1085#1082#1072
+          Caption = #1074#1087
           DataBinding.FieldName = 'QTY4'
           Width = 69
           Position.BandIndex = 1
