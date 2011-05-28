@@ -1,7 +1,7 @@
 unit ShellApp;
 
 interface
-uses bfwShellApp, classes;
+uses CoreClasses, bfwShellApp, ConfigServiceIntf, classes;
 
 type
   TShellApp = class(TApp)
@@ -15,6 +15,7 @@ implementation
 
 procedure TShellApp.AddServices;
 begin
+  ConfigServiceIntf.LOCAL_APP_DATA_KEY := 'Hermes\HermesTrade';
   inherited;
 end;
 
