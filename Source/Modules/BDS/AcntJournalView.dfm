@@ -7,8 +7,8 @@ inherited frAcntJournalView: TfrAcntJournalView
   inherited ViewControl: TcxGroupBox
     object pcTotal: TcxPageControl
       Left = 2
-      Top = 378
-      Width = 769
+      Top = 370
+      Width = 761
       Height = 143
       ActivePage = cxTabSheet2
       Align = alBottom
@@ -16,7 +16,7 @@ inherited frAcntJournalView: TfrAcntJournalView
       TabOrder = 2
       TabPosition = tpBottom
       ClientRectBottom = 119
-      ClientRectRight = 769
+      ClientRectRight = 761
       ClientRectTop = 0
       object cxTabSheet1: TcxTabSheet
         Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1089#1095#1077#1090#1072
@@ -28,7 +28,7 @@ inherited frAcntJournalView: TfrAcntJournalView
         object grBS: TcxDBVerticalGrid
           Left = 0
           Top = 0
-          Width = 769
+          Width = 761
           Height = 119
           BorderStyle = cxcbsNone
           Align = alClient
@@ -100,8 +100,8 @@ inherited frAcntJournalView: TfrAcntJournalView
     end
     object cxSplitter1: TcxSplitter
       Left = 2
-      Top = 370
-      Width = 769
+      Top = 362
+      Width = 761
       Height = 8
       HotZoneClassName = 'TcxXPTaskBarStyle'
       AlignSplitter = salBottom
@@ -114,6 +114,7 @@ inherited frAcntJournalView: TfrAcntJournalView
       PanelStyle.Active = True
       PanelStyle.CaptionIndent = 5
       PanelStyle.OfficeBackgroundKind = pobkStyleColor
+      ParentBackground = False
       ParentColor = False
       ParentFont = False
       Style.BorderStyle = ebsNone
@@ -133,13 +134,13 @@ inherited frAcntJournalView: TfrAcntJournalView
       TabOrder = 3
       Visible = False
       Height = 30
-      Width = 769
+      Width = 761
     end
     object grList: TcxGrid
       Left = 2
       Top = 72
-      Width = 769
-      Height = 298
+      Width = 761
+      Height = 290
       Align = alClient
       TabOrder = 4
       LookAndFeel.Kind = lfOffice11
@@ -164,18 +165,6 @@ inherited frAcntJournalView: TfrAcntJournalView
         Caption = 'Table'
         GridView = grJrnView
       end
-    end
-  end
-  inherited ActionList: TActionList
-    object acStateChangeNext: TAction
-      Caption = #1057#1083#1077#1076#1091#1102#1097#1077#1077' '#1089#1086#1089#1090#1086#1103#1085#1080#1077
-    end
-    object acStateChangePrev: TAction
-      Caption = #1055#1088#1077#1076#1099#1076#1091#1097#1077#1077' '#1089#1086#1089#1090#1086#1103#1085#1080#1077
-    end
-    object acOpenCAcntJrn: TAction
-      Caption = #1046#1091#1088#1085#1072#1083' '#1082#1086#1088#1088#1077#1089#1087#1086#1085#1076#1077#1085#1090#1072
-      ShortCut = 16459
     end
   end
   object cxStyleRepository1: TcxStyleRepository
