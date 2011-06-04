@@ -15,14 +15,11 @@ uses
 
 type
   TfrAcntJournalView = class(TfrCustomContentView, IAcntJournalView)
-    acStateChangeNext: TAction;
-    acStateChangePrev: TAction;
     cxStyleRepository1: TcxStyleRepository;
     cxStyle1: TcxStyle;
     BSDataSource: TDataSource;
     cxStyle2: TcxStyle;
     cxStyle3: TcxStyle;
-    acOpenCAcntJrn: TAction;
     pcTotal: TcxPageControl;
     cxTabSheet1: TcxTabSheet;
     cxTabSheet2: TcxTabSheet;
