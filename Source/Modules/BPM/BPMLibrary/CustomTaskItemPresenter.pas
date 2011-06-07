@@ -32,9 +32,8 @@ type
     procedure CmdTaskLinkedOpen(Sender: TObject);
     procedure CmdTaskUpdateProcess(Sender: TObject);
   protected
-    procedure DoInitialize; override;
-    procedure DoViewInitialize; override;
-    procedure DoViewReady; override;
+    procedure OnInit(Sender: IAction); override;
+    procedure OnViewReady; override;
     function GetEntityName: string;
     function GetEntityViewName: string;
     function GetEVItem: IEntityView;
@@ -89,22 +88,14 @@ begin
 
 end;
 
-procedure TCustomTaskItemPresenter.DoInitialize;
+procedure TCustomTaskItemPresenter.OnInit(Sender: IAction);
 begin
-  inherited;
   WorkItem.State['TASK_ID'] := WorkItem.State['ID'];
-  FreeOnViewClose := true;
 end;
 
-procedure TCustomTaskItemPresenter.DoViewInitialize;
+procedure TCustomTaskItemPresenter.OnViewReady;
 begin
   ViewTitle := 'Задача: ' + VarToStr(GetEVItem.Values['TASK_ID']);
-  inherited;
-end;
-
-procedure TCustomTaskItemPresenter.DoViewReady;
-begin
-
 
   (GetView as ICustomTaskItemView).LinkData(GetEVItem.DataSet, GetEVData.DataSet, GetEVDataRec.DataSet,
     GetEVLinks.DataSet, GetEVUpdates.DataSet);

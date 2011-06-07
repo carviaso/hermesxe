@@ -18,9 +18,9 @@ type
   private
     procedure CmdTaskBulk(Sender: TObject);
   protected
-    procedure OnInitialize; override;
+    procedure OnInit(Sender: IAction); override;
     procedure OnViewReady; override;
-    procedure OnSelectionChanged; override;    
+    procedure OnSelectionChanged; override;
     function GetLaneID: Variant; override;
     function GetEVListName: string; override;
   end;
@@ -65,8 +65,9 @@ begin
   Result := const_LaneID;
 end;
 
-procedure TSalTaskListPresenterWh.OnInitialize;
+procedure TSalTaskListPresenterWh.OnInit(Sender: IAction);
 begin
+  inherited;
   ViewTitle := ACT_BPM_TASK_LIST_SAL_WH_CAPTION;
 end;
 
@@ -78,6 +79,7 @@ end;
 
 procedure TSalTaskListPresenterWh.OnViewReady;
 begin
+  inherited;
   WorkItem.Commands[Command_TaskBulk].Caption := 'Консолидировать задачи';
   WorkItem.Commands[Command_TaskBulk].SetHandler(CmdTaskBulk);
   View.CommandBar.AddCommand(Command_TaskBulk, 'Другие действия');

@@ -42,7 +42,6 @@ type
     procedure ViewActivateHandler;
     procedure ViewDeactivateHandler;
   protected
-    procedure OnInitialize; override;
     procedure OnViewReady; override;
   end;
 
@@ -187,14 +186,9 @@ begin
   Result := GetView.Value['TASK_EXECUTOR_ID'];
 end;
 
-procedure TSalTaskDeskPresenterWh.OnInitialize;
-begin
-  ViewTitle := ACT_BPM_TASK_DESK_SAL_WH_CAPTION;
-  FreeOnViewClose := true;
-end;
-
 procedure TSalTaskDeskPresenterWh.OnViewReady;
 begin
+  ViewTitle := ACT_BPM_TASK_DESK_SAL_WH_CAPTION;
   FTaskID := Unassigned;
   FTaskLoaded := false;
 
