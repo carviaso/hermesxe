@@ -11,7 +11,7 @@ type
   TSalTaskListPresenterCert = class(TCustomTaskListPresenter)
   private
   protected
-    procedure OnInitialize; override;
+    procedure OnInit(Sender: IAction); override;
     function GetLaneID: Variant; override;
     function GetEVListName: string; override;
   end;
@@ -31,7 +31,7 @@ begin
   Result := const_LaneID;
 end;
 
-procedure TSalTaskListPresenterCert.OnInitialize;
+procedure TSalTaskListPresenterCert.OnInit(Sender: IAction);
 begin
   ViewTitle := ACT_BPM_TASK_LIST_SAL_CERT_CAPTION;
 end;

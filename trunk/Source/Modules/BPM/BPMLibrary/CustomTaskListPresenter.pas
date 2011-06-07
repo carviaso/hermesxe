@@ -66,7 +66,7 @@ type
     procedure TaskListReload;
     procedure TaskListPrint(AIDList: Variant; AutoPrint: boolean);
 
-    procedure DoViewReady; override;
+    procedure OnViewReady; override;
     procedure DoSelectionChanged;
     procedure OnSelectionChanged; virtual;
     procedure DoStateTabChanged;
@@ -102,7 +102,7 @@ begin
 end;
 
 
-procedure TCustomTaskListPresenter.DoViewReady;
+procedure TCustomTaskListPresenter.OnViewReady;
 begin
 
   FAutoPrintTask := true;

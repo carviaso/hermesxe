@@ -61,7 +61,6 @@ type
     procedure CmdSelector(Sender: TObject);
   protected
     function OnGetWorkItemState(const AName: string): Variant; override;
-    procedure OnInitialize; override;
     procedure OnViewReady; override;
     function GetEVJrn: IEntityView;
     function GetEVBS: IEntityView;
@@ -202,18 +201,6 @@ begin
     Result := inherited OnGetWorkItemState(AName);
 end;
 
-procedure TAcntJournalPresenter.OnInitialize;
-begin
-
-  ViewTitle := GetViewTitle;
-
-  WorkItem.State['Date1'] := FirstDayOfMonth(Date);
-  WorkItem.State['Date2'] := LastDayOfMonth(Date);
-
-//  WorkItem.Commands[COMMAND_STATE_CHANGE_NEXT].SetHandler(CmdStateChange);
-//  WorkItem.Commands[COMMAND_STATE_CHANGE_PREV].SetHandler(CmdStateChange);
-
-end;
 
 procedure TAcntJournalPresenter.OnSelectionChanged;
 begin
@@ -222,7 +209,10 @@ end;
 
 procedure TAcntJournalPresenter.OnViewReady;
 begin
+  ViewTitle := GetViewTitle;
 
+  WorkItem.State['Date1'] := FirstDayOfMonth(Date);
+  WorkItem.State['Date2'] := LastDayOfMonth(Date);
 
   WorkItem.Commands[COMMAND_CACNT_JRN].SetHandler(CmdOpenCAcntJrn);
 

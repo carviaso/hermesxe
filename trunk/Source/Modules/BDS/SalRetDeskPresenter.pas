@@ -71,7 +71,6 @@ type
   protected
     function OnGetWorkItemState(const AName: string): Variant; override;
     //
-    procedure OnInitialize; override;
     procedure OnViewReady; override;
   end;
 
@@ -182,14 +181,9 @@ begin
   GetView.Value['FORWARDER_NAME'] := '';
 end;
 
-procedure TSalRetDeskPresenter.OnInitialize;
-begin
-  ViewTitle := VIEW_SALRET_DESK_CAPTION;
-  FreeOnViewClose := true;
-end;
-
 procedure TSalRetDeskPresenter.OnViewReady;
 begin
+  ViewTitle := VIEW_SALRET_DESK_CAPTION;
   FDocLoaded := false;
   WorkItem.State[VIEW_VALUE_DOC_KIND] := 0;
 
